@@ -2,6 +2,7 @@ package publisher;
 
 import observer.Subscriber;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //controller for weather api
@@ -13,6 +14,10 @@ public class WeatherApi implements Publisher {
     //DI
     public WeatherApi(List<Subscriber> subscriberList) {
         this.subscriberList = subscriberList;
+    }
+
+    public WeatherApi() {
+        subscriberList = new ArrayList<>();
     }
 
     @Override

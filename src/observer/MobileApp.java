@@ -10,6 +10,7 @@ public class MobileApp implements Subscriber {
     @Override
     public void update(String data) {
         this.data = data;
-        System.out.format("%nUpdated data: %s %n", data);
+        System.out.format("%n----received from a mobile---- %n" +
+                "%nUpdated data: %s %n", data);
     }
 }
