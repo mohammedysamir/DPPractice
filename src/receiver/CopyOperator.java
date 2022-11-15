@@ -1,6 +1,6 @@
 package receiver;
 
-public class copyOperator implements Receiver{
+public class CopyOperator implements Receiver{
     @Override
     public void operate() {
         System.out.println("Copying...");

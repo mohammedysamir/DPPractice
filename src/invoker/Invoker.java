@@ -1,6 +1,6 @@
 package invoker;
 
-import Command.Command;
+import command.Command;
 
 public interface Invoker {
     void setCommand(Command command);
