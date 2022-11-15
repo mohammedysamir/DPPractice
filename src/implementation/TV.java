@@ -4,10 +4,13 @@ public class TV implements Device {
     int channel;
     int volume;
     boolean isEnabled;
+    int numberOfChannels;
 
-    public TV(int channel, int volume) {
+
+    public TV(int channel, int volume, int maximumNumberOfChannels) {
         this.channel = channel;
         this.volume = volume;
+        this.numberOfChannels = maximumNumberOfChannels;
         isEnabled = false;
     }
 
@@ -50,25 +53,27 @@ public class TV implements Device {
 
     @Override
     public void incrementVolume() {
-        volume++;
+        if (volume < 100)
+            volume++;
         System.out.println("TV volume incremented to: " + volume);
     }
 
     @Override
     public void decrementVolume() {
-        volume--;
+        if (volume > 0)
+            volume--;
         System.out.println("TV volume decremented to: " + volume);
     }
 
     @Override
     public void incrementChannel() {
-        channel++;
+        channel = (channel + 1) % numberOfChannels;
         System.out.println("TV channel incremented to: " + channel);
     }
 
     @Override
     public void decrementChannel() {
-        channel--;
+        channel = (channel - 1) % numberOfChannels;
         System.out.println("TV channel decremented to: " + channel);
     }
 }

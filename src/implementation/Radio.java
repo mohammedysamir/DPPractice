@@ -2,12 +2,14 @@ package implementation;
 
 public class Radio implements Device {
     int channel;
+    int numberOfChannels;
     int volume;
     boolean isEnabled;
 
-    public Radio(int channel, int volume) {
+    public Radio(int channel, int volume, int maximumNumberOfChannels) {
         this.channel = channel;
         this.volume = volume;
+        this.numberOfChannels = maximumNumberOfChannels;
         isEnabled = false;
     }
 
@@ -51,25 +53,27 @@ public class Radio implements Device {
 
     @Override
     public void incrementVolume() {
-        volume++;
+        if (volume < 100)
+            volume++;
         System.out.println("Radio volume incremented to: " + volume);
     }
 
     @Override
     public void decrementVolume() {
-        volume--;
+        if (volume > 0)
+            volume--;
         System.out.println("Radio volume decremented to: " + volume);
     }
 
     @Override
     public void incrementChannel() {
-        channel++;
+        channel = (channel + 1) % numberOfChannels;
         System.out.println("Radio channel incremented to: " + channel);
     }
 
     @Override
     public void decrementChannel() {
-        channel--;
+        channel = (channel - 1) % numberOfChannels;
         System.out.println("Radio channel decremented to: " + channel);
     }
 }
