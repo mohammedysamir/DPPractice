@@ -6,6 +6,6 @@ public interface Device {
     void disable();
     int getVolume();
     void setVolume(int volume);
-    String getChannel();
-    void setChannel(String channel);
+    int getChannel();
+    void setChannel(int channel);
 }

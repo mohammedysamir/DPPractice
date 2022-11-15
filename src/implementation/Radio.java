@@ -1,11 +1,11 @@
 package implementation;
 
 public class Radio implements Device {
-    String channel;
+    int channel;
     int volume;
     boolean isEnabled;
 
-    public Radio(String channel, int volume) {
+    public Radio(int channel, int volume) {
         this.channel = channel;
         this.volume = volume;
         isEnabled = false;
@@ -18,11 +18,13 @@ public class Radio implements Device {
 
     @Override
     public void enable() {
+        System.out.println("Radio turn on");
         isEnabled = true;
     }
 
     @Override
     public void disable() {
+        System.out.println("Radio turn off");
         isEnabled = false;
     }
 
@@ -37,12 +39,12 @@ public class Radio implements Device {
     }
 
     @Override
-    public String getChannel() {
+    public int getChannel() {
         return channel;
     }
 
     @Override
-    public void setChannel(String channel) {
+    public void setChannel(int channel) {
         this.channel = channel;
     }
 }
