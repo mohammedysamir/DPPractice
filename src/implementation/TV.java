@@ -73,7 +73,8 @@ public class TV implements Device {
 
     @Override
     public void decrementChannel() {
-        channel = (channel - 1) % numberOfChannels;
+        if (channel > 0)
+            channel--;
         System.out.println("TV channel decremented to: " + channel);
     }
 }
