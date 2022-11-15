@@ -47,4 +47,29 @@ public class Radio implements Device {
     public void setChannel(int channel) {
         this.channel = channel;
     }
+
+
+    @Override
+    public void incrementVolume() {
+        volume++;
+        System.out.println("Radio volume incremented to: " + volume);
+    }
+
+    @Override
+    public void decrementVolume() {
+        volume--;
+        System.out.println("Radio volume decremented to: " + volume);
+    }
+
+    @Override
+    public void incrementChannel() {
+        channel++;
+        System.out.println("Radio channel incremented to: " + channel);
+    }
+
+    @Override
+    public void decrementChannel() {
+        channel--;
+        System.out.println("Radio channel decremented to: " + channel);
+    }
 }

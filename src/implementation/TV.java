@@ -47,4 +47,28 @@ public class TV implements Device {
     public void setChannel(int channel) {
         this.channel = channel;
     }
+
+    @Override
+    public void incrementVolume() {
+        volume++;
+        System.out.println("TV volume incremented to: " + volume);
+    }
+
+    @Override
+    public void decrementVolume() {
+        volume--;
+        System.out.println("TV volume decremented to: " + volume);
+    }
+
+    @Override
+    public void incrementChannel() {
+        channel++;
+        System.out.println("TV channel incremented to: " + channel);
+    }
+
+    @Override
+    public void decrementChannel() {
+        channel--;
+        System.out.println("TV channel decremented to: " + channel);
+    }
 }
