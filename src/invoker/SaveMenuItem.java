@@ -1,6 +1,6 @@
 package invoker;
 
-import Command.Command;
+import command.Command;
 
 public class SaveMenuItem implements Invoker {
     Command command; //reference of command
@@ -16,6 +16,7 @@ public class SaveMenuItem implements Invoker {
 
     @Override
     public void executeCommand() {
+        System.out.println("Executing command from save menu item");
         command.execute();
     }
 }

@@ -1,6 +1,6 @@
 package invoker;
 
-import Command.Command;
+import command.Command;
 
 public class SaveButton implements Invoker {
     Command command; //reference of a command
@@ -16,6 +16,7 @@ public class SaveButton implements Invoker {
 
     @Override
     public void executeCommand() {
+        System.out.println("Executing command from save button");
         command.execute();
     }
 }
