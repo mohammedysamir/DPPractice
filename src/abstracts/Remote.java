@@ -10,26 +10,30 @@ public class Remote {
     }
 
     public void togglePower() {
-        if (device.isEnabled())
+        if (!device.isEnabled())
             device.enable();
         else
             device.disable();
     }
 
     public void volumeDown() {
-        device.decrementVolume();
+        if (device.isEnabled())
+            device.decrementVolume();
     }
 
     public void volumeUp() {
-        device.incrementVolume();
+        if (device.isEnabled())
+            device.incrementVolume();
     }
 
     public void channelUp() {
-        device.incrementChannel();
+        if (device.isEnabled())
+            device.incrementChannel();
     }
 
     public void channelDown() {
-        device.decrementChannel();
+        if (device.isEnabled())
+            device.decrementChannel();
     }
 
 }
