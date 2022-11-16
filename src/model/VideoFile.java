@@ -12,8 +12,8 @@ public class VideoFile {
         return codecType;
     }
 
-    public VideoFile(String name, String codecType) {
+    public VideoFile(String name) {
         this.name = name;
-        this.codecType = codecType;
+        this.codecType = name.substring(name.indexOf(".") + 1);
     }
 }
